@@ -13,4 +13,10 @@ app.get('/item/:slug', (req, res) => {
   res.end(`<p>Item: ${slug}</p><a href="/">Go back</a>`);
 });
 
+app.get('/api/redirect', async (req,res) => {
+  const code = req.query.code;
+  console.log('code', code);
+  res.redirect('https://vercel.com');
+})
+
 module.exports = app;
