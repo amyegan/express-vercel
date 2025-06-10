@@ -16,7 +16,7 @@ app.get('/item/:slug', (req, res) => {
 app.get('/api/redirect', async (req,res) => {
   const code = req.query.code;
   console.log('code:', code);
-  const next = req.query.next;
+  const next = req.query.next ?? 'https://vercel.com';
   console.log('redirect url:', next);
   res.redirect(next);
 })
